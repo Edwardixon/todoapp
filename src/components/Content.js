@@ -1,8 +1,9 @@
 import React from 'react';
+import "../styles/Content.css";
 
 function Content () {
     return (
-        <div className="App-content-grid">
+        <div className="content-grid">
             <p >Progress Status</p>
             <p >Task Name</p>
             <p >Level</p>

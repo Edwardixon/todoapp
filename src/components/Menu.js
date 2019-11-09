@@ -1,15 +1,16 @@
 import React from 'react';
+import '../styles/Menu.css';
 
-function Dick() {
+function Menu() {
     return (
         <header>
-            <button className="App-add-task-button">Add task</button>
-            <button className="App-left-task App-new-tasks">New Tasks</button>
-            <button className="App-left-task App-all-tasks">All Tasks</button>
-            <button className="App-left-task App-old-tasks">Old Tasks</button>
-            <button className="App-left-task App-complete-tasks">Complete</button>
+            <button className="add-task-button">Add task</button>
+            <button className="left-task new-tasks">New Tasks</button>
+            <button className="left-task all-tasks">All Tasks</button>
+            <button className="left-task old-tasks">Old Tasks</button>
+            <button className="left-task complete-tasks">Complete</button>
         </header>
     )
 }
 
-export default Dick;
+export default Menu;

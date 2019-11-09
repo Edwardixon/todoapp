@@ -1,0 +1,19 @@
+.add-task-button {
+    width: 100px;
+    height: 30px;
+    color: red;
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 8px;
+  }
+  
+  .left-task {
+    width: 100px;
+    height: 30px;
+    color: red;
+    float: left;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 8px;
+  }
