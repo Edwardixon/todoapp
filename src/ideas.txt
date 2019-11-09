@@ -1,4 +1,5 @@
-Add subtasks that dictate the slider
+Add subtasks that dictate the slider:
+    Calculate the % of the slider based on how many subtasks you completed
 Show the last substask completed/ next subtask to be completed
 Add NewTask OldTAsk CompleteTask behind a filter dropdrown
 Think about responsive design 
