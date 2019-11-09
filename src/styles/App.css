@@ -43,7 +43,14 @@
   justify-items: center;
 }
 
+.title, .slider-container, p {
+  display: flex;
+  align-items: center;
+}
 
+.check {
+  flex:left;
+}
 
 
 /*SLider*/
@@ -73,7 +80,6 @@
   margin-bottom: 25px;
   border-radius: 30px;
   height: 5px;
-  
 }
 
 .bar{

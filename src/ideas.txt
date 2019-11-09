@@ -1,0 +1,4 @@
+Add subtasks that dictate the slider
+Show the last substask completed/ next subtask to be completed
+Add NewTask OldTAsk CompleteTask behind a filter dropdrown
+Think about responsive design 
