@@ -6,19 +6,18 @@ function Form(props) {
         display:"none"
     }
 
+
     const subtasks = props.inputs.map((input, index) => {
         return (
-        <input
-            type="text"
-            key={index}
-            value={input}
-            onChange={(event)=> props.handleInput(event, index)}
-            placeholder="Subtask"
-        />)
+            <input
+                type="text"
+                key={index}
+                value={input}
+                onChange={(event)=> props.handleInput(event, index)}
+                placeholder="Subtask"
+            />)
     })
-   
-    
-    
+
     return (
         <form style={props.display ? null : hide} className="form">
             <input 
@@ -28,7 +27,7 @@ function Form(props) {
                 placeholder="Title"
             />
             {subtasks}
-            <button>Add new</button>
+            <button type="button" onClick={(event) => props.handleFormSubmit(event)}>Add new</button>
         </form>
     )
 }

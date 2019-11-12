@@ -1,6 +1,6 @@
 const data = [
     {
-        id: 1,
+        id:1,
         title: "Take out the trash",
         completed: true,
         subtasks:
@@ -12,7 +12,7 @@ const data = [
         ],
     },
     {
-        id: 2,
+        id:2,
         title: "Grocery shopping",
         completed: false,
         subtasks:
@@ -32,7 +32,7 @@ const data = [
         ],
     },
     {
-        id: 3,
+        id:3,
         title: "Clean gecko tank",
         completed: false,
         subtasks:
@@ -52,7 +52,7 @@ const data = [
         ],
     },
     {
-        id: 4,
+        id:4,
         title: "Mow lawn",
         completed: true,
         subtasks:
@@ -72,7 +72,7 @@ const data = [
         ],
     },
     {
-        id: 5,
+        id:5,
         title: "Catch up on Arrested Development",
         completed: false,
         subtasks:

@@ -3,8 +3,10 @@ import '../styles/App.css';
 import Menu from './Menu';
 import Content from './Content';
 import Form from "./Form";
+import dataContent from "../data"
 
 function App() {
+  const [data, setData] = useState(dataContent);
   // Controls the form display
   // Show while button selected
   const [newTitle, setNewTitle] = useState("");
@@ -14,35 +16,60 @@ function App() {
     setDisplay((prevDisplay) => !prevDisplay);
   }
   useEffect(() => {
-    // do stuff 
-    let newInputs;
     inputs.forEach((input, index) => {
-      console.log("Input:" + input);
-      console.log("index: " +index);
+      // If it's not the last input element
       if(index !== inputs.length - 1)
+        // And If the input element is empty then remove it
         if(input.length == 0) {
-          console.log('topkek');
           const newInputs = inputs.slice();
           newInputs.splice(index, 1);
           setInputs(newInputs);
         }
-
     });
-
     if(inputs[inputs.length - 1].length == 1){
       console.log("kek");
       const newInput = inputs.slice();
       newInput.push("")
       setInputs(newInput);
     }
-    /*
-    else if (inputs.length > 1 && inputs[inputs.length - 1].length == 0) {
-      console.log("haha");
-      /*const newInput = inputs.slice();
-      newInput.pop();
-      setInputs(newInput);
-    }*/
   }, [inputs])
+
+  let handleFormSubmit = () => {
+      // Add to database
+
+      // Create subtasks
+      const subtaskObjects = []
+      inputs.forEach(input => {
+        if(input.length > 0)
+          subtaskObjects.push({
+            text:input,
+            completed:false
+          })
+      });
+      
+      // Get last ID
+      const lastId = dataContent[dataContent.length - 1].id;
+      // Create main object
+      const newDataObject = {
+        id:lastId + 1,
+        title:newTitle,
+        completed:false,
+        subtasks:subtaskObjects
+      }
+      // Add it to data
+      dataContent.push(newDataObject);
+      console.log(dataContent);
+      
+      // Update state
+      setData(dataContent);
+
+      // Reset inputs state
+      setInputs([""]);
+      setNewTitle("");
+
+
+  }
+
 
   let handleFormChange = (event) => {
     setNewTitle(event.target.value);
@@ -58,6 +85,8 @@ function App() {
     })
     // Add a new input form
     setInputs(newInputs);
+
+  
   }
   return (
     <div className="App">
@@ -67,12 +96,15 @@ function App() {
       <Form 
         inputs={inputs}
         handleInput={handleInput}
+        handleFormSubmit={handleFormSubmit}
 
         display={display}
         newTitle={newTitle}  
         handleFormChange={handleFormChange}
       />
-      <Content />
+      <Content 
+        data={data}
+      />
       
     </div>
   );
