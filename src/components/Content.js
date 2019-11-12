@@ -1,15 +1,22 @@
 import React, {useState} from 'react';
 import "../styles/Content.css";
 import ContentRow from "./ContentRow"
-import contentData from "../data";
 
-function Content () {
-    const [data, setData] = useState(contentData);
-    const rows = data.map((item) => {
+function Content (props) {
+    
+    const rows = props.data.map((item) => {
         // Calculate width for prgress bar
         let width = calcProgressBarProcent(item.subtasks)
+        let firstUncompletedSubtask;
+        item.subtasks.forEach(subtask => {
+            if(subtask.completed == false){
+                firstUncompletedSubtask= subtask;
+            }
+        })
+        console.log(firstUncompletedSubtask);
         return (<ContentRow 
             key={item.id} 
+            subtask={firstUncompletedSubtask ? firstUncompletedSubtask.text : "ALL COMPLETED"}
             title={item.title} 
             barWidth={width}/>
         )
@@ -27,12 +34,12 @@ function Content () {
         return procent;
     }
 
-    function changeElem(){
-        let copyData = data.slice();
+    /*function changeElem(){
+        let copyData = props.data.slice();
         copyData[0].title = "new title bitch";
         setData(copyData);
         console.log(copyData);
-    }
+    }*/
 
     return (
         <div className="content-grid">

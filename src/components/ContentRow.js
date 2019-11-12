@@ -21,7 +21,7 @@ function ContentRow(props) {
                         </div>
                     </div>
                     {/*TODO: Make this scrollable side ways*/}
-                    <p>Current Subtask{/*props.level*/}</p>
+                    <p>{props.subtask}</p>
                     <p>Critique{/*props.coments*/}</p>
                     <p>10:20AM{/*props.time*/}</p>
             </div>

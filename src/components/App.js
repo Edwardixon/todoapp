@@ -12,8 +12,20 @@ function App() {
   const [newTitle, setNewTitle] = useState("");
   const [display, setDisplay] = useState(false);
   const [inputs, setInputs] = useState([""]);
+
+
   let handleMenuClick = () => {
     setDisplay((prevDisplay) => !prevDisplay);
+  }
+
+  let filterCompletedData = () => {
+    setData(dataContent.filter((item) => item.completed == true));
+  }
+  let filterAllTasks = () => {
+    setData(dataContent);
+  }
+  let filterUncompleteTasks = () => {
+    setData(dataContent.filter((item) => item.completed == false));
   }
   useEffect(() => {
     inputs.forEach((input, index) => {
@@ -92,6 +104,9 @@ function App() {
     <div className="App">
       <Menu 
         handleMenuClick={handleMenuClick}
+        filterCompletedData={filterCompletedData}
+        filterAllTasks={filterAllTasks}
+        filterUncompleteTasks={filterUncompleteTasks}
       />
       <Form 
         inputs={inputs}

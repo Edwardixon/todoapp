@@ -7,7 +7,7 @@ const data = [
         [
             {
                 text:"Make trash",
-                completed:true
+                completed:false
             }
         ],
     },
@@ -23,11 +23,11 @@ const data = [
             },
             {
                 text:"Get out of bed",
-                completed:true
+                completed:false
             },
             {
                 text:"Make trash",
-                completed:true
+                completed:false
             }
         ],
     },
@@ -39,11 +39,11 @@ const data = [
         [
             {
                 text:"Make trash",
-                completed:false
+                completed:true
             },
             {
                 text:"Get out of bed",
-                completed:true
+                completed:false
             },
             {
                 text:"Make trash",
@@ -59,7 +59,7 @@ const data = [
         [
             {
                 text:"Make trash",
-                completed:false
+                completed:true
             },
             {
                 text:"Get out of bed",
@@ -67,7 +67,7 @@ const data = [
             },
             {
                 text:"Make trash",
-                completed:false
+                completed:true
             }
         ],
     },
@@ -79,14 +79,14 @@ const data = [
         [
             {
                 text:"Make trash",
-                completed:false
+                completed:true
             },
             {
                 text:"Get out of bed",
                 completed:true
             },
             {
-                text:"Make trash",
+                text:"Get dicked",
                 completed:false
             }
         ],
