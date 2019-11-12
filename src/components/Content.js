@@ -4,21 +4,30 @@ import ContentRow from "./ContentRow"
 
 function Content (props) {
     
-    const rows = props.data.map((item) => {
+    const rows = props.data.map((item, index) => {
+
+
         // Calculate width for prgress bar
         let width = calcProgressBarProcent(item.subtasks)
         let firstUncompletedSubtask;
+        // Get first subtask
         item.subtasks.forEach(subtask => {
             if(subtask.completed == false){
                 firstUncompletedSubtask= subtask;
             }
         })
+
         console.log(firstUncompletedSubtask);
         return (<ContentRow 
             key={item.id} 
             subtask={firstUncompletedSubtask ? firstUncompletedSubtask.text : "ALL COMPLETED"}
             title={item.title} 
-            barWidth={width}/>
+            barWidth={width}
+            checked={item.completed}
+
+            index={index}
+            handleChange={props.handleChange}
+            />
         )
     })
 

@@ -13,6 +13,14 @@ function App() {
   const [display, setDisplay] = useState(false);
   const [inputs, setInputs] = useState([""]);
 
+  let handleChange = (index) => {
+
+    console.log(index);
+    const newStuff = data.slice();
+    newStuff[index].completed = !newStuff[index].completed;
+    setData(newStuff);
+    
+  }
 
   let handleMenuClick = () => {
     setDisplay((prevDisplay) => !prevDisplay);
@@ -39,7 +47,6 @@ function App() {
         }
     });
     if(inputs[inputs.length - 1].length == 1){
-      console.log("kek");
       const newInput = inputs.slice();
       newInput.push("")
       setInputs(newInput);
@@ -70,7 +77,6 @@ function App() {
       }
       // Add it to data
       dataContent.push(newDataObject);
-      console.log(dataContent);
       
       // Update state
       setData(dataContent);
@@ -97,8 +103,6 @@ function App() {
     })
     // Add a new input form
     setInputs(newInputs);
-
-  
   }
   return (
     <div className="App">
@@ -118,6 +122,7 @@ function App() {
         handleFormChange={handleFormChange}
       />
       <Content 
+        handleChange={handleChange}
         data={data}
       />
       

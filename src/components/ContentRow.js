@@ -10,7 +10,12 @@ function ContentRow(props) {
         <div>
             <div className="row">
                     <div className="title">
-                        <input className="check"type="checkbox" />
+                        <input 
+                            className="check"
+                            type="checkbox"
+                            checked={props.checked}
+                            onChange={() => props.handleChange(props.index)}
+                         />
                         <p className="">{props.title}</p>
                     </div>
                     <div className="slider-container">
